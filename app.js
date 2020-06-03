@@ -1,6 +1,5 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const log = console.log;
 
 const getHtml = async () => {
   try {
@@ -14,7 +13,7 @@ getHtml()
   .then(html => {
     let ulList = [];
     const $ = cheerio.load(html.data);
-    const $bodyList = $("ul.list li").children("div.item-box01");
+    const $bodyList = $("div.list-type038 ul.list li").children("div.item-box01");
 
     $bodyList.each(function(i, elem) {
       ulList[i] = {
