@@ -1,9 +1,11 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
+const url = "https://www.yna.co.kr/sports/baseball"
+
 const getHtml = async () => {
   try {
-    return await axios.get("https://www.yna.co.kr/sports/baseball");
+    return await axios.get(url);
   } catch (error) {
     console.error(error);
   }
@@ -21,7 +23,7 @@ getHtml()
         image_url: $(this).find('figure.img-con a').attr('href'),
         url: $(this).find('div.news-con a').attr('href'),
         title: $(this).find('div.news-con strong').text(),
-        summary: $(this).find('div.news-con p').text().slice(0, -29)
+        summary: $(this).find('div.news-con p').text()
       };
       //console.log(ulList[i])  // list object checking code
     });
