@@ -2,16 +2,24 @@ var express = require('express');
 var router = express.Router();
 
 const getXports = require('../test1.js');
-const Zum = require('../test2.js');
-const Chosun = require('../test3.js');
-const zum = Zum.zum;
-const chosun = Chosun.chosun;
+const getZum = require('../test2.js');
+const getChosun = require('../test3.js');
+const getYna = require('../test4.js')
 
 let xports;
+let zum;
+let chosun;
+let yna;
 (async function() {
 try {
-	xports = await getXports();
-	console.log(xports);
+    xports = await getXports();
+    zum = await getZum();
+    chosun = await getChosun();
+    yna = await getYna();
+    console.log(xports);
+    console.log(zum);
+    console.log(chosun);
+    console.log(yna);
 } catch (e) {
 	return console.log(e);
 }
@@ -23,13 +31,9 @@ router.get('/', function(req, res, next){
         xports : xports,
         zum : zum,
         chosun : chosun,
- //       yna : yna
+        yna : yna
     });
 });
 
-console.log("aaaa\n");
-for(var i in xports){
-	console.log("aaaa\n");
-    console.log(i.datetime);
-}
+console.log("started\n");
 module.exports = router;

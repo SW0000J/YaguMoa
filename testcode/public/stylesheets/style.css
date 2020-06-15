@@ -1,0 +1,81 @@
+/* =============== ##공통 (common) ======================== */
+html,body{height:auto;}
+body{font-weight:normal;font-family:'맑은 고딕','Malgun Gothic',AppleSDGothicNeo-Regular,Arial,Helvetica,sans-serif;letter-spacing:-1px;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-family:'맑은 고딕','Malgun Gothic',AppleSDGothicNeo-Regular,Arial,Helvetica,sans-serif;}
+p,li,dt,dd,span,strong,em,b,input,button,select,textarea,label,a{font-weight:normal;font-family:'맑은 고딕','Malgun Gothic',AppleSDGothicNeo-Regular,Arial,Helvetica,sans-serif;}
+a{display:inline-block;vertical-align:top;}
+
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;font:inherit;font-weight:bold;}
+img{display:inline-block;border:0 none;vertical-align:top;}
+cite,code,dfn,del,em,ins,label,q,span,strong,b,i,time,mark,font,kbd,q,s,samp,small,strike,sub,sup,tt,var,u,center{display:inline-block;margin:0;padding:0;vertical-align:top;font:inherit;}
+address,cite,em,dfn{font:inherit;}
+b,i,strong,optgroup{font:inherit;font-weight:bold;}
+div,article,aside,main,menu,details,figure,figcaption,hgroup,footer,header,nav,section,object,summary,iframe{display:block;margin:0;padding:0;font:inherit;}
+
+
+/* =============== ##레이아웃 (layout) ======================== */
+
+body:not(.body-popup-win){min-width:1130px;}
+body.page-main,
+body.body-wide1300{min-width:1320px;}
+html,body{width:100%;height:100%;margin:0;padding:0;}
+body{font-weight:normal;font-size:1em;line-height:1.5em;font-family:sans-serif;color:#000;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;}
+
+/* list */
+dl,dd,ol,ul,li{margin:0;padding:0;}
+li{list-style-type:none;}
+
+/* link */
+a{font:inherit;color:inherit;text-decoration:none;cursor:pointer;}
+a{background-color:transparent;}
+a:link,
+a:visited,
+a:active,
+a:focus{color:inherit;}
+
+/* 공통 */
+[class*='title-type']{position:relative;display:inline-block;box-sizing:border-box;vertical-align:bottom;} /* height:36px; */
+[class*='title-type'] [class*='tit'],
+[class*='title-type'] [class*='txt']{vertical-align:bottom;}
+[class*='title-type'] [class*='tit']{position:relative;box-sizing:border-box;}
+[class*='title-type'] .tit{font-size:18px;line-height:22px;}
+[class*='title-type'].bold .tit{font-weight:bold;}
+[class*='title-type'] .txt{margin-left:6px;color:#666;font-size:10px;line-height:12px;letter-spacing:0;}
+[class*='title-type'] .tit+.txt{margin-left:6px;}
+
+/* =============== List type ======================== */
+[class*='list-type']{font-size:0;line-height:1;}
+[class*='list-type'] [class*='item']{position:relative;}
+[class*='list-type'] [class*='item']:after{content:'';display:block;clear:both;}
+[class*='list-type'] .img-con .img{overflow:hidden;position:relative;} /* background-color:#ccc; */
+[class*='list-type'] .img-con .img img{width:100%;height:auto;}
+[class*='list-type'] .img-con .label-box01{position:absolute;bottom:0;right:0;min-width:50px;height:35px;box-sizing:border-box;padding:8px 8px 7px;background-color:#fff;text-align:center;vertical-align:middle;}
+
+/* basic */
+.hidden-obj{position:absolute;visibility:hidden;top:-9999px;left:-9999px;}
+.blind{overflow:hidden;visibility:hidden;position:absolute;top:0;left:0;width:0;height:0;padding:0;font-size:0;line-height:0;}
+.display-none{display:none;}
+
+/* title-type04 */
+.title-type04[class*='arr'] .tit{padding-right:17px;}
+.title-type04 .tit{font-size:20px;line-height:22px;}
+
+.img-cover{overflow:hidden;}
+
+/* list-type038 */
+.list-type038 .list{border-top:1px solid #e5e5e5;}
+.list-type038 [class*='item-box']{}
+.list-type038 .item-box01{display:table;width:100%;border-bottom:1px solid #e5e5e5;}
+.list-type038 .item-box01>.img-con,
+.list-type038 .item-box01>.news-con,
+.list-type038 .item-box01>[class*='info-box']{display:table-cell;padding:30px 0;vertical-align:top;}
+.list-type038 .img-con{width:180px;}
+.list-type038 .img-con .img{width:170px;height:110px;}
+.list-type038 .news-con{max-height:110px;}
+.list-type038 .tit-news{font-weight:bold;font-size:18px;line-height:24px;}
+.list-type038 .tit-wrap:hover .tit-news{text-decoration:underline;}
+.list-type038 .lead{overflow:hidden;max-height:48px;margin-top:12px;color:#666;font-size:14px;line-height:24px;}
+.list-type038 .lead:empty{display:none;}
+.list-type038 .info-box01{width:110px;}
+.list-type038 .info-box01 .txt-time{padding-top:4px;color:#666;font-size:12px;line-height:14px;letter-spacing:0;}
+.list-type038 .item-box01 .info-box02{width:156px;padding:0 20px 0 0;vertical-align:middle;text-align:right;}

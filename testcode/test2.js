@@ -11,24 +11,35 @@ const getHtml = async () => {
   }
 };
 
-getHtml()
-  .then(html => {
-    let ulList = [];
-    const $ = cheerio.load(html.data);
-    const $bodyList = $("div.major_news > ul").children("ul.no_reply > li.large");
+
+const getXports = async () => {
+
+	return new Promise((resolve, reject) => {
+	getHtml()
+	  .then(html => {
+		let ulList = [];
+		//console.log(html.data);
+		const $ = cheerio.load(html.data);
+		const $bodyList = $("div.major_news > ul").children("ul.no_reply > li.large");
 
     $bodyList.each(function(i, elem) {
       ulList[i] = {
-        url: 'news.zum.com' + $(this).find('div.img > a').attr('href'),
+        url: '//news.zum.com' + $(this).find('div.img > a').attr('href'),
         image_url: $(this).find('div.img > a > img').attr('src'),
         title: $(this).find('div.txt > div.title > a').text(),
         summary: $(this).find('div.txt > div.content > a').text(),//.slice(0, -29)
         datetime: $(this).find('div.txt > div.content > span.etc').text()
       };
-      //console.log(ulList[i])  // list object checking code
-    });
+		  //console.log(ulList[i])  // list object checking code
+		});
 
-    const data = ulList.filter(n => n.title);
-    return data;
-    //return ulList;
-  });
+		const data = ulList.filter(n => n.title);
+		return data;
+		//return ulList;
+	  }).then(data => {
+		  resolve(data);
+	  });
+});
+};
+
+module.exports = getXports;

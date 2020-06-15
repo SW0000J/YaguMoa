@@ -3,35 +3,128 @@
 
     <head>
         <meta charset="utf-8">
-        <title>ossswoo.tk</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title>YaguMoa[ossswoo.tk]</title>
     </head>
 
-    <body>
-        <div class = 'main'>
-            <div class = 'center'>
-                <div>
-                    <% for(var i of xports) { %>
-                    <li>
-                        <div class='item'>
-                            <div class='info'>
-                                <span class='time'><%= i.datetime %></span>
-                            </div>
-                            <div class='img'>
-                                <a>
-                                    <img src = <%= i.image_url %>>
-                                </a>
-                            </div>
-                            <div class='news'>
-                                <a href = <%= i.url %>>
-                                    <strong><%= i.title %></strong>
-                                </a>
-                                <p>
-                                    <%= i.summary %>
-                                </p>
-                            </div>
+    <body class = "body-news-list page-sports body-static" data-nav="sports">
+        <div id = "container" class = "wrap-container">
+            <div class = "container">
+                <div class = 'content03 width1100 line01'>
+                    <div class = "section01">
+                        <div class = 'title-page02'>
+                            <h1 class = "title-type04 bold">
+                                <span class = "tit">야구 모아</span>
+                            </h1>
                         </div>
-                    </li>
-                    <% } %>
+                        <section class = 'box-type box-latest01'>
+                            <strong class="hidden-obj">야구 기사 목록</strong>
+                            <div class = "list-type038">
+                                <ul class = "list">
+                                    <% for(var i of xports) { %>
+                                    <li>
+                                        <div class='item-box01'>
+                                            <div class='info-box01'>
+                                                <span class="blind">송고시간</span>
+                                                <span class='txt-time'><%= i.datetime %></span>
+                                            </div>
+                                            <% if (i.image_url != undefined) { %>
+                                            <figure class='img-con'>
+                                                <a class = "img img-cover imgLiquid_bgSize imgLiquid_ready" style = "background-size: cover; background-position: center top; background-repeat: no-repeat;" href = <%= i.url %> >
+                                                    <img src = <%= i.image_url %>>
+                                                </a>
+                                            </figure>
+                                            <% } %>
+                                            <div class='news-con'>
+                                                <a class = 'tit-wrap' href = <%= i.url %>>
+                                                    <strong class = 'tit-news'><%= i.title %></strong>
+                                                </a>
+                                                <p class = "lead">
+                                                    <%= i.summary %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <% } %>
+                                    <% for(var i of zum) { %>
+                                        <li>
+                                            <div class='item-box01'>
+                                                <div class='info-box01'>
+                                                    <span class="blind">송고시간</span>
+                                                    <span class='txt-time'><%= i.datetime %></span>
+                                                </div>
+                                                <% if (i.image_url != undefined) { %>
+                                                <figure class='img-con'>
+                                                    <a class = "img img-cover imgLiquid_bgSize imgLiquid_ready" style = "background-size: cover; background-position: center top; background-repeat: no-repeat;" href = <%= i.url %> >
+                                                        <img src = <%= i.image_url %>>
+                                                    </a>
+                                                </figure>
+                                                <% } %>
+                                                <div class='news-con'>
+                                                    <a class = 'tit-wrap' href = <%= i.url %>>
+                                                        <strong class = 'tit-news'><%= i.title %></strong>
+                                                    </a>
+                                                    <p class = "lead">
+                                                        <%= i.summary %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <% } %>
+                                    <% for(var i of chosun) { %>
+                                        <li>
+                                            <div class='item-box01'>
+                                                <div class='info-box01'>
+                                                    <span class="blind">송고시간</span>
+                                                    <span class='txt-time'><%= i.datetime %></span>
+                                                </div>
+                                                <% if (i.image_url != undefined) { %>
+                                                <figure class='img-con'>
+                                                    <a class = "img img-cover imgLiquid_bgSize imgLiquid_ready" style = "background-size: cover; background-position: center top; background-repeat: no-repeat;" href = <%= i.url %> >
+                                                        <img src = <%= i.image_url %>>
+                                                    </a>
+                                                </figure>
+                                                <% } %>
+                                                <div class='news-con'>
+                                                    <a class = 'tit-wrap' href = <%= i.url %>>
+                                                        <strong class = 'tit-news'><%= i.title %></strong>
+                                                    </a>
+                                                    <p class = "lead">
+                                                        <%= i.summary %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <% } %>
+                                    <% for(var i of yna) { %>
+                                        <li>
+                                            <div class='item-box01'>
+                                                <div class='info-box01'>
+                                                    <span class="blind">송고시간</span>
+                                                    <span class='txt-time'><%= i.datetime %></span>
+                                                </div>
+                                                <% if (i.image_url != undefined) { %>
+                                                <figure class='img-con'>
+                                                    <a class = "img img-cover imgLiquid_bgSize imgLiquid_ready" style = "background-size: cover; background-position: center top; background-repeat: no-repeat;" href = <%= i.url %> >
+                                                        <img src = <%= i.image_url %>>
+                                                    </a>
+                                                </figure>
+                                                <% } %>
+                                                <div class='news-con'>
+                                                    <a class = 'tit-wrap' href = <%= i.url %>>
+                                                        <strong class = 'tit-news'><%= i.title %></strong>
+                                                    </a>
+                                                    <p class = "lead">
+                                                        <%= i.summary %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

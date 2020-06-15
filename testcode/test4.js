@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const url = "http://news.chosun.com/svc/list_in/list.html?catid=82"
+const url = "https://www.yna.co.kr/sports/baseball"
 
 const getHtml = async () => {
   try {
@@ -20,15 +20,15 @@ const getXports = async () => {
 		let ulList = [];
     //console.log(html.data);
     const $ = cheerio.load(html.data);
-		const $bodyList = $("div.list_body > div.list_content").children("dl.list_item");
+    const $bodyList = $("div.list-type038 ul.list li").children("div.item-box01");
 
     $bodyList.each(function(i, elem) {
       ulList[i] = {
-        url: $(this).find('dd.thumb > a').attr('href'),
-        image_url: $(this).find('dd.thumb a > img').attr('src'),
-        title: $(this).find('dt > a').text(),
-        summary: $(this).find('dd.desc').text(),//.slice(1, -2),
-        datetime: $(this).find('dd.date_author > span.date').text()
+        datetime: $(this).find('span.txt-time').text(),
+        image_url: $(this).find('figure.img-con a img').attr('src'),
+        url: $(this).find('div.news-con a').attr('href'),
+        title: $(this).find('div.news-con strong').text(),
+        summary: $(this).find('div.news-con p').text()
       };
       //console.log(ulList[i])  // list object checking code
     });

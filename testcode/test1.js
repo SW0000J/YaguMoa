@@ -1,7 +1,5 @@
 const axios = require("axios"); // 웹 서버 요청 모듈
 const cheerio = require("cheerio"); // Load한 것을 jQuery처럼 사용
-//const Iconv = require('iconv').Iconv; // 한글 깨짐 방지
-//const iconv = new Iconv('EUC-KR', 'UTF-8//IGNORE');
 
 const url = "http://www.xportsnews.com/?ac=article_list&cate_indexno=12"
 
@@ -26,7 +24,7 @@ const getXports = async () => {
 
 		$bodyList.each(function(i, elem) {
 		  ulList[i] = {
-			url: 'xportsnews.com' + $(this).find('div.thumb > a').attr('href'),
+			url: 'http://www.xportsnews.com' + $(this).find('div.thumb > a').attr('href'),
 			image_url: $(this).find('div.thumb > a > img').attr('src'),
 			title: $(this).find('dl.dlist > dt > a').text(),
 			summary: $(this).find('dd').text().slice(1, -2),
