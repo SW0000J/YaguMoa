@@ -13,25 +13,35 @@ const getHtml = async () => {
   }
 };
 
-getHtml()
-  .then(html => {
-    let ulList = [];
-    //console.log(html.data);
-    const $ = cheerio.load(html.data);
-    const $bodyList = $("ul.list_news > li");//.children("");
 
-    $bodyList.each(function(i, elem) {
-      ulList[i] = {
-        url: 'xportsnews.com' + $(this).find('div.thumb > a').attr('href'),
-        image_url: $(this).find('div.thumb > a > img').attr('src'),
-        title: $(this).find('dl.dlist > dt > a').text(),
-        summary: $(this).find('dd').text().slice(1, -2),
-        datetime: $(this).find('dd > span.data').text()
-      };
-      //console.log(ulList[i])  // list object checking code
-    });
+const getXports = async () => {
 
-    const data = ulList.filter(n => n.title);
-    return data;
-    //return ulList;
-  }).then(res => console.log(res));
+	return new Promise((resolve, reject) => {
+	getHtml()
+	  .then(html => {
+		let ulList = [];
+		//console.log(html.data);
+		const $ = cheerio.load(html.data);
+		const $bodyList = $("ul.list_news > li");//.children("");
+
+		$bodyList.each(function(i, elem) {
+		  ulList[i] = {
+			url: 'xportsnews.com' + $(this).find('div.thumb > a').attr('href'),
+			image_url: $(this).find('div.thumb > a > img').attr('src'),
+			title: $(this).find('dl.dlist > dt > a').text(),
+			summary: $(this).find('dd').text().slice(1, -2),
+			datetime: $(this).find('dd > span.data').text()
+		  };
+		  //console.log(ulList[i])  // list object checking code
+		});
+
+		const data = ulList.filter(n => n.title);
+		return data;
+		//return ulList;
+	  }).then(data => {
+		  resolve(data);
+	  });
+});
+};
+
+module.exports = getXports;

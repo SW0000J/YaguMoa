@@ -31,4 +31,4 @@ getHtml()
     const data = ulList.filter(n => n.title);
     return data;
     //return ulList;
-  }).then(res => console.log(res));
+  });
