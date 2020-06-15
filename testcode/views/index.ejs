@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>ossswoo.tk</title>
+    </head>
+
+    <body>
+        <div class = 'main'>
+            <div class = 'center'>
+                <div>
+                    <% for(var i in xports) { %>
+                    <li>
+                        <div class='item'>
+                            <div class='info'>
+                                <span class='time'><%= i.datetime %></span>
+                            </div>
+                            <div class='img'>
+                                <a>
+                                    <img src = <%= i.image_url %>>
+                                </a>
+                            </div>
+                            <div class='news'>
+                                <a href = <%= i.url %>>
+                                    <strong><%= i.title %></strong>
+                                </a>
+                                <p>
+                                    <%= i.summary %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
