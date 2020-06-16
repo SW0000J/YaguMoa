@@ -27,7 +27,7 @@ const getXports = async () => {
 			url: 'http://www.xportsnews.com' + $(this).find('div.thumb > a').attr('href'),
 			image_url: $(this).find('div.thumb > a > img').attr('src'),
 			title: $(this).find('dl.dlist > dt > a').text(),
-			summary: $(this).find('dd').text().slice(1, -2),
+			summary: $(this).find('dd').text(),
 			datetime: $(this).find('dd > span.data').text()
 		  };
 		  //console.log(ulList[i])  // list object checking code

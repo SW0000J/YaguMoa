@@ -19,7 +19,7 @@ let zum;
 let chosun;
 let yna;
 let newslist;
-let nc = new Array();
+let kia = new Array();
 (async function() {
 try {
     isplus1 = await getIsplus1();
@@ -32,16 +32,16 @@ try {
     yna = await getYna();
 
     newslist = isplus1.concat(isplus2, isplus3, isplus4, xports, zum, chosun, yna);
-    let searchlist = ['NC', 'nc', '엔씨', '다이노스', '알테어', '강진성', '깡', '이동욱', '창원'];
+    let searchlist = ['KIA', 'kia', '기아', '타이거즈', '최형우', '윌리엄스', '광주'];
     for(var i of newslist){
         for (var j of searchlist){
             if(i.title.indexOf(j) !== -1 || i.summary.indexOf(j) !== -1){
-                nc.push(i);
+                kia.push(i);
                 break;
             }
         }
     }
-    console.log("nc loaded");
+    console.log("kia loaded");
 
 } catch (e) {
 	return console.log(e);
@@ -50,8 +50,8 @@ try {
 
 router.get('/', function(req, res, next){
     
-    res.render('nc', {
-        nc : nc
+    res.render('kia', {
+        kia : kia
     });
 });
 
