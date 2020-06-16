@@ -11,15 +11,21 @@ let zum;
 let chosun;
 let yna;
 let newslist;
+let nc = new Array();
 (async function() {
 try {
     xports = await getXports();
     zum = await getZum();
     chosun = await getChosun();
     yna = await getYna();
-
+    
     newslist = xports.concat(zum, chosun, yna);
-    console.log("index loaded");
+    for(var i of newslist){
+        if(i.title.indexOf('NC') !== -1 || i.title.indexOf('nc') !== -1 || i.title.indexOf('엔씨') !== -1 || i.summary.indexOf('NC') !== -1 || i.summary.indexOf('nc') !== -1 || i.summary.indexOf('엔씨') !== -1){
+            nc.push(i);
+        }
+    }
+    console.log("nc loaded");
 
 } catch (e) {
 	return console.log(e);
@@ -28,8 +34,8 @@ try {
 
 router.get('/', function(req, res, next){
     
-    res.render('index', {
-        newslist : newslist
+    res.render('nc', {
+        nc : nc
     });
 });
 

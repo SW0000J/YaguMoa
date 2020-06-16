@@ -12,7 +12,7 @@ const getHtml = async () => {
 };
 
 
-const getXports = async () => {
+const getZum = async () => {
 
 	return new Promise((resolve, reject) => {
 	getHtml()
@@ -42,4 +42,4 @@ const getXports = async () => {
 });
 };
 
-module.exports = getXports;
+module.exports = getZum;
