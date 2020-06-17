@@ -1,7 +1,7 @@
 {
   "name": "2020_OSS_TermProJect",
   "version": "1.0.0",
-  "description": "야구 기사 크롤링\r ===============",
+  "description": "야구모아(YaguMoa)",
   "main": "app.js",
   "dependencies": {
     "axios": "^0.19.2",
