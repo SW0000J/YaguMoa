@@ -1,0 +1,33 @@
+{
+  "name": "2020_OSS_TermProJect",
+  "version": "1.0.0",
+  "description": "야구 기사 크롤링\r ===============",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "consolidate": "^0.15.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "iconv": "^3.0.0",
+    "iconv-lite": "^0.5.1",
+    "mustache": "^4.0.1",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "requset": "^0.0.1-security",
+    "route": "^0.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@khuhub.khu.ac.kr:12959/2019102228/2020_OSS_TermProJect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
