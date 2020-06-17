@@ -22,7 +22,8 @@ let newslist;
 let sk = new Array();
 const loadlist = async function() {
 try {
-    newlist = []
+    newlist = [] 
+    sk = []
     isplus1 = await getIsplus1();
     isplus2 = await getIsplus2();
     isplus3 = await getIsplus3();

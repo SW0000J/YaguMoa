@@ -23,6 +23,7 @@ let lotte = new Array();
 const loadlist = async function() {
 try {
     newlist = []
+    lotte = []
     isplus1 = await getIsplus1();
     isplus2 = await getIsplus2();
     isplus3 = await getIsplus3();
