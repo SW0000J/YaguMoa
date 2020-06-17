@@ -23,7 +23,6 @@ let hanwha = new Array();
 const loadlist = async function() {
 try {
     newlist = []
-    hanwha = []
     isplus1 = await getIsplus1();
     isplus2 = await getIsplus2();
     isplus3 = await getIsplus3();
@@ -35,6 +34,7 @@ try {
 
     newslist = isplus1.concat(isplus2, isplus3, isplus4, xports, zum, chosun, yna);
     let searchlist = ['한화', '이긇스', '18연패', '김태균', '한용덕', '최원호', '대전'];
+    hanwha = []
     for(var i of newslist){
         for (var j of searchlist){
             if(i.title.indexOf(j) !== -1 || i.summary.indexOf(j) !== -1){
